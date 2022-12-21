@@ -1,4 +1,4 @@
-region     = "us-east-1"
+region     = "ap-south-1"
 # vpc_id               = "vpc-04523bdfdb8a58a65"
 cidr_block           = "10.0.0.0/16"
 az              = ["ap-south-1a", "ap-south-1b"]
