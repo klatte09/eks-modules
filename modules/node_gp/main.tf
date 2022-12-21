@@ -2,7 +2,7 @@ resource "aws_eks_node_group" "non-prod" {
   
   cluster_name = var.eks_name
   node_group_name = var.env
-  node_role_arn = aws_iam_role.eks_cluster.arn
+  node_role_arn = var.eks_cluster_arn
 
   subnet_ids = [
     var.private_subnet_1,
@@ -25,11 +25,6 @@ resource "aws_eks_node_group" "non-prod" {
     role = "worker-nodes"
   }
   
-  version = var.eks_version
+  version = 1.22
 
-  depends_on = [
-    aws_iam_role_policy_attachment.amazon_eks_worker_node_policy_general,
-    aws_iam_role_policy_attachment.amazon_eks_cni_policy_general,
-    aws_iam_role_policy_attachment.amazon_ec2_container_registry_read_only,
-  ]
 }

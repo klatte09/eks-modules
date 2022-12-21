@@ -11,15 +11,15 @@ module "eks" {
   name             = var.env
   private_subnet_1 = module.vpc.private_subnet_1
   private_subnet_2 = module.vpc.private_subnet_2
-  env              = var.env
   eks_version      = var.eks_version
   security_group_ids = module.vpc.security_group_ids
 }
 
 module "node_gp" {
   source        = "./modules/node_gp"
-  eks_name      = module.eks.eks_name
+  eks_name      =    module.eks.eks_name
   private_subnet_1 = module.vpc.private_subnet_1
   private_subnet_2 = module.vpc.private_subnet_2
-  eks_version      = var.eks_version
+  eks_cluster_arn = module.eks.eks_cluster_arn
+  env              = var.env
 }
