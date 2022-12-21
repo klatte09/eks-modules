@@ -20,9 +20,9 @@ variable "private_subnets" {
 
 
 
- variable "vpc_id" {
+#  variable "vpc_id" {
   
- }
+# }
 
 variable "eks_version" {
 

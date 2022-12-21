@@ -13,9 +13,7 @@ variable "private_subnets" {
   type = list
 }
 
-variable "vpc_id" {
-  
-}
+
 # variable "env-eks-node" {
 
 # }
